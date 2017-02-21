@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.Toast;
 
 import com.example.asier.vibbay03.R;
@@ -20,6 +20,7 @@ public class loginFragment extends Fragment {
     EditText username;
     EditText password;
     Button buttonClick;
+    GridLayout fL;
 
 
     public loginFragment() {
@@ -33,12 +34,9 @@ public class loginFragment extends Fragment {
         View.OnClickListener mClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                testLogin(username.getText().toString(),password.getText().toString());
-            }
+                    testLogin();}
         };
-        FrameLayout fL = (FrameLayout) inflater.inflate(R.layout.fragment_login, container, false);
-        username = (EditText)fL.findViewById(R.id.login_username);
-        password = (EditText)fL.findViewById(R.id.login_password);
+        fL = (GridLayout) inflater.inflate(R.layout.fragment_login, container, false);
         buttonClick = (Button)fL.findViewById(R.id.buttonAccept);
         buttonClick.setOnClickListener(mClickListener);
         return fL;
@@ -50,8 +48,12 @@ public class loginFragment extends Fragment {
     }
 
 
-    public void testLogin(String user, String pass){
-        if(username.equals("mco@mco") && password.equals("12345")){
+    public void testLogin(){
+        username = (EditText)fL.findViewById(R.id.login_username);
+        password = (EditText)fL.findViewById(R.id.login_password);
+        Log.i("Login",username.getText().toString());
+        Log.i("Login",password.getText().toString());
+        if(username.getText().toString().equals("mco@mco") && password.getText().toString().equals("12345")){
             Toast toast = Toast.makeText(getContext(), "CORRECT", Toast.LENGTH_SHORT);
             toast.show();
         }else{
