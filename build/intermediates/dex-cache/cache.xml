@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.1\2780d858273ce1bb90f6b12e1ef0d40f7741fca\converter-gson-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02780d858273ce1bb90f6b12e1ef0d40f7741fca">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-gson-2.0.1_8cff7a75aa84f70e42a1f937fe5f8810c104dd82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -25,7 +34,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6a2f50d9969181d75c8917ab63977db46152e416">
+        sha1="8264a7bbe652de21f4c9c91faf75ce63eddebd56">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_1dd9eab783d5e267cfe330ad344f0ef81e7864ea\classes.dex" />
     </item>
     <item
@@ -36,6 +45,15 @@
         revision="25.0.2"
         sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_d649071d42b19ddb0895f195d18104c729d7888a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.1\27293c440d2085cde1d859528aff6e7d3b6ae40\retrofit-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.1_bc041eaccc32524e283f8ecf2a4b6d526e7b3358\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -54,6 +72,15 @@
         revision="25.0.2"
         sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_e371b59b905cc267f1822aa0b62452b9b83d0be0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_e423abed1a0df196d59bb22f08cc14c357cf7380\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -97,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="ee1c4f6f01b33e7449af5dbf94afed0985ec74c6">
+        sha1="3fb5880df42828fc61896dbb5340a42edf54d265">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f516a43e32dd2e219899fb7603feb7a0d610ea08\classes.dex" />
     </item>
     <item
@@ -111,12 +138,30 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_ad1ec6f6d462f28ca4f35d1c6ebbb983d5c73281\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.1_10c32225e555f1aed275846972e2583cce81be7c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.6.1_23a4c1ce256bf5c634a7998e2134b49c860330b3\classes.dex" />
     </item>
     <item
         is-multidex="true"
