@@ -16,6 +16,10 @@ import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.Retro;
 import com.example.asier.vibbay03.Services.LoginService;
 
+import org.json.JSONArray;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -61,18 +65,23 @@ public class loginFragment extends Fragment {
         password = (EditText)fL.findViewById(R.id.login_password);
 
         LoginService ls = Retro.getLoginService();
-        Call<Usuario> call = ls.auth(username.getText().toString(), password.getText().toString());
-        call.enqueue(new Callback<Usuario>() {
+        Call<List<Usuario>> call = ls.auth(username.getText().toString(), password.getText().toString());
+        call.enqueue(new Callback<List<Usuario>>() {
             @Override
-            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                Usuario usu = response.body();
-                Toast toast = Toast.makeText(getContext(), usu.getEmail(), Toast.LENGTH_SHORT);
-                toast.show();
+            public void onResponse(Call<List<Usuario>> call, Response<List<Usuario>> response) {
+                Toast loginMessage;
+                if(response.body().size() > 0){
+                    Usuario u = response.body().get(0);
+                    loginMessage = Toast.makeText(getContext(), u.getEmail(), Toast.LENGTH_SHORT);
+                }else{
+                    loginMessage = Toast.makeText(getContext(), "USER OR PASSWORD INVALID", Toast.LENGTH_SHORT);
+                }
+                loginMessage.show();
             }
 
             @Override
-            public void onFailure(Call<Usuario> call, Throwable t) {
-                t.getStackTrace();
+            public void onFailure(Call<List<Usuario>> call, Throwable t) {
+                Log.i("FALLOS",t.getMessage());
                 Toast toast = Toast.makeText(getContext(), "Connection failure", Toast.LENGTH_SHORT);
                 toast.show();
             }

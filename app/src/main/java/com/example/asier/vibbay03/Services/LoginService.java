@@ -2,6 +2,8 @@ package com.example.asier.vibbay03.Services;
 
 import com.example.asier.vibbay03.Beans.Usuario;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -13,5 +15,5 @@ import retrofit2.http.Path;
 public interface LoginService {
 
     @GET("usuario/auth/{email}/{password}")
-    Call<Usuario> auth(@Path("email") String email, @Path("password") String password);
+    Call<List<Usuario>> auth(@Path("email") String email, @Path("password") String password);
 }
