@@ -13,8 +13,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.example.asier.vibbay03.Fragments.loginFragment;
-import com.example.asier.vibbay03.Fragments.mainFragment;
+import com.example.asier.vibbay03.Fragments.AllArticlesFragment;
+import com.example.asier.vibbay03.Fragments.LoginFragment;
+import com.example.asier.vibbay03.Fragments.MyArticlesFragment;
+import com.example.asier.vibbay03.Fragments.NewArticleFragment;
+import com.example.asier.vibbay03.Services.Retro;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +29,9 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        //Llamar a AllArticlesFragment
+       // onNavigationItemSelected(MenuItem item //El item main);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,16 +86,30 @@ public class MainActivity extends AppCompatActivity
 
         switch (item.getItemId()){
             case R.id.nav_login:
-                fragment = new loginFragment();
+                fragment = new LoginFragment();
                 fragmentTransaction = true;
                 break;
-            case R.id.nav_gallery:
-                fragment = new mainFragment();
+            case R.id.nav_myArticles:
+                if(Retro.loggedIn != null){
+                    fragment = new MyArticlesFragment();
+                    fragmentTransaction = true;
+                }else{
+                    fragment = new LoginFragment();
+                    fragmentTransaction = true;
+                }
+                break;
+            case R.id.nav_newArticle:
+                if(Retro.loggedIn != null){
+                    fragment = new NewArticleFragment();
+                    fragmentTransaction = true;
+                }else{
+                    fragment = new LoginFragment();
+                    fragmentTransaction = true;
+                }
+                break;
+            case R.id.nav_main:
+                fragment = new AllArticlesFragment();
                 fragmentTransaction = true;
-                break;
-            case R.id.nav_slideshow:
-                break;
-            case R.id.nav_manage:
                 break;
         }
 

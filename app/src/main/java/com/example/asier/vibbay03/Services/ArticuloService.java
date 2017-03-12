@@ -24,6 +24,9 @@ public interface ArticuloService {
     @GET("articulo")
     Call<List<Articulo>> getArticulos();
 
+    @GET("articulo/propietario/{email}")
+    Call<List<Articulo>> getArticulos(@Path("email") String email);
+
     @POST("articulo")
     Call<Articulo> crearArticulo(@Body Articulo articulo);
 

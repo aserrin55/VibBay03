@@ -1,5 +1,6 @@
 package com.example.asier.vibbay03.Services;
 
+import com.example.asier.vibbay03.Beans.Usuario;
 import com.example.asier.vibbay03.Services.ArticuloService;
 import com.example.asier.vibbay03.Services.LoginService;
 import com.example.asier.vibbay03.Services.UsuarioService;
@@ -14,10 +15,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Retro {
 
     private static final String BASE_URL = "http://192.168.1.128:8084/Vibbay03Web/rest/";
-    private static Retrofit retrofit = new Retrofit.Builder()
+    private static final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build();
+
+    public static Usuario loggedIn;
 
     public static LoginService getLoginService(){
         return retrofit.create(LoginService.class);

@@ -16,15 +16,13 @@ import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.Retro;
 import com.example.asier.vibbay03.Services.LoginService;
 
-import org.json.JSONArray;
-
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class loginFragment extends Fragment {
+public class LoginFragment extends Fragment {
 
 
     EditText username;
@@ -33,7 +31,7 @@ public class loginFragment extends Fragment {
     GridLayout fL;
 
 
-    public loginFragment() {
+    public LoginFragment() {
         // Required empty public constructor
     }
 
@@ -72,6 +70,7 @@ public class loginFragment extends Fragment {
                 Toast loginMessage;
                 if(response.body().size() > 0){
                     Usuario u = response.body().get(0);
+                    Retro.loggedIn = u;
                     loginMessage = Toast.makeText(getContext(), u.getEmail(), Toast.LENGTH_SHORT);
                 }else{
                     loginMessage = Toast.makeText(getContext(), "USER OR PASSWORD INVALID", Toast.LENGTH_SHORT);
