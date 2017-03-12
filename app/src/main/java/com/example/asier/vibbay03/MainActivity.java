@@ -14,7 +14,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.asier.vibbay03.Fragments.AllArticlesFragment;
-import com.example.asier.vibbay03.Fragments.LoginFragment;
+import com.example.asier.vibbay03.Fragments.loginFragment;
 import com.example.asier.vibbay03.Fragments.MyArticlesFragment;
 import com.example.asier.vibbay03.Fragments.NewArticleFragment;
 import com.example.asier.vibbay03.Services.Retro;
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity
 
         switch (item.getItemId()){
             case R.id.nav_login:
-                fragment = new LoginFragment();
+                fragment = new loginFragment();
                 fragmentTransaction = true;
                 break;
             case R.id.nav_myArticles:
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity
                     fragment = new MyArticlesFragment();
                     fragmentTransaction = true;
                 }else{
-                    fragment = new LoginFragment();
+                    fragment = new loginFragment();
                     fragmentTransaction = true;
                 }
                 break;
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity
                     fragment = new NewArticleFragment();
                     fragmentTransaction = true;
                 }else{
-                    fragment = new LoginFragment();
+                    fragment = new loginFragment();
                     fragmentTransaction = true;
                 }
                 break;

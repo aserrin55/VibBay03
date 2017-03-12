@@ -16,6 +16,10 @@ import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
 import com.example.asier.vibbay03.Services.Retro;
 
+import org.json.JSONObject;
+
+import java.io.IOException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -57,19 +61,28 @@ public class NewArticleFragment extends Fragment {
         precio = (EditText) ll.findViewById(R.id.ArticlePrice);
 
         ArticuloService as = Retro.getArticuloService();
-        Call<Articulo> call = as.crearArticulo(new Articulo(0,nombre.getText().toString(),Retro.loggedIn.getEmail(),true,"",Integer.parseInt(precio.getText().toString())));
+        Call<Articulo> call = as.crearArticulo(new Articulo(nombre.getText().toString(),Retro.loggedIn.getEmail(),1,"",Integer.parseInt(precio.getText().toString())));
         call.enqueue(new Callback<Articulo>() {
             @Override
             public void onResponse(Call<Articulo> call, Response<Articulo> response) {
-                nombre.setText("");
-                precio.setText("");
-                Toast toast = Toast.makeText(getContext(), "Nuevo artículo creado", Toast.LENGTH_SHORT);
-                toast.show();
+                if(response.isSuccessful()){
+                    nombre.setText("");
+                    precio.setText("");
+                    Toast toast = Toast.makeText(getContext(), "Nuevo artículo creado", Toast.LENGTH_SHORT);
+                    toast.show();
+                }else{
+                    try {
+                        Log.i("FALLOS RESPUESTA",response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+
             }
 
             @Override
             public void onFailure(Call<Articulo> call, Throwable t) {
-                Log.i("FALLOS",t.getMessage());
+                Log.i("FALLOS DE CONEXION",t.getMessage());
                 Toast toast = Toast.makeText(getContext(), "Connection failure", Toast.LENGTH_SHORT);
                 toast.show();
             }
