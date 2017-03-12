@@ -4,7 +4,7 @@
     android:id="@+id/content_login"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context="com.example.asier.vibbay03.Fragments.LoginFragment"
+    tools:context="com.example.asier.vibbay03.Fragments.loginFragment"
     android:columnCount="2"
     android:rowCount="4">
 

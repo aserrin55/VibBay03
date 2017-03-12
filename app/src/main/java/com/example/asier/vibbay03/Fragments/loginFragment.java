@@ -22,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginFragment extends Fragment {
+public class loginFragment extends Fragment {
 
 
     EditText username;
@@ -31,7 +31,7 @@ public class LoginFragment extends Fragment {
     GridLayout fL;
 
 
-    public LoginFragment() {
+    public loginFragment() {
         // Required empty public constructor
     }
 
@@ -71,7 +71,7 @@ public class LoginFragment extends Fragment {
                 if(response.body().size() > 0){
                     Usuario u = response.body().get(0);
                     Retro.loggedIn = u;
-                    loginMessage = Toast.makeText(getContext(), u.getEmail(), Toast.LENGTH_SHORT);
+                    loginMessage = Toast.makeText(getContext(), "LOGIN CORRECTO", Toast.LENGTH_SHORT);
                 }else{
                     loginMessage = Toast.makeText(getContext(), "USER OR PASSWORD INVALID", Toast.LENGTH_SHORT);
                 }

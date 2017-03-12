@@ -15,14 +15,22 @@ public class Articulo {
     @SerializedName("email")
     private String email;
     @SerializedName("estado")
-    private boolean estado;
+    private int estado;
     @SerializedName("imagen")
     private String imagen;
     @SerializedName("precio")
     private int precio;
 
-    public Articulo(int id, String titulo, String email, boolean estado, String imagen, int precio) {
+    public Articulo(int id, String titulo, String email, int estado, String imagen, int precio) {
         this.id = id;
+        this.titulo = titulo;
+        this.email = email;
+        this.estado = estado;
+        this.imagen = imagen;
+        this.precio = precio;
+    }
+
+    public Articulo(String titulo, String email, int estado, String imagen, int precio) {
         this.titulo = titulo;
         this.email = email;
         this.estado = estado;
@@ -54,11 +62,11 @@ public class Articulo {
         this.email = email;
     }
 
-    public boolean isEstado() {
+    public int isEstado() {
         return estado;
     }
 
-    public void setEstado(boolean estado) {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
 
