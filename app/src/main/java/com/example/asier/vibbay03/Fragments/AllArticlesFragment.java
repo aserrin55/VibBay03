@@ -16,6 +16,7 @@ import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
 import com.example.asier.vibbay03.Services.Retro;
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
@@ -49,15 +50,28 @@ public class AllArticlesFragment extends Fragment {
         call.enqueue(new Callback<List<Articulo>>() {
             @Override
             public void onResponse(Call<List<Articulo>> call, Response<List<Articulo>> response) {
-                Iterator<Articulo> it = response.body().iterator();
-                while(it.hasNext()){
-                    Articulo a = it.next();
-                    LinearLayout x = new LinearLayout(getContext());
-                    TextView nombre = new TextView(x.getContext());
-                    nombre.setText(a.getTitulo());
-                    x.addView(nombre);
-                    fl.addView(x);
-                    //Mostrar grid de articulos
+                if(response.isSuccessful()){
+                    Log.i("ARTICULOS",String.valueOf(response.body().size()));
+                    Iterator<Articulo> it = response.body().iterator();
+                    while(it.hasNext()){
+                        Articulo a = it.next();
+                        LinearLayout x = new LinearLayout(getContext());
+                        TextView nombre = new TextView(x.getContext());
+                        TextView precio = new TextView(x.getContext());
+                        nombre.setText(a.getTitulo());
+                        precio.setText(String.valueOf(a.getPrecio()));
+                        x.addView(nombre);
+                        x.addView(precio);
+                        fl.addView(x);
+                        //Mostrar grid de articulos
+                }
+
+                }else{
+                    try {
+                        Log.i("FALLOS RESPUESTA",response.errorBody().string());
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
 
