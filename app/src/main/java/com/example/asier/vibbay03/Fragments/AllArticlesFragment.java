@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.asier.vibbay03.Beans.Articulo;
@@ -23,7 +25,7 @@ import retrofit2.Response;
 
 public class AllArticlesFragment extends Fragment {
 
-    GridLayout fL;
+    GridLayout fl;
 
 
     public AllArticlesFragment() {
@@ -33,8 +35,8 @@ public class AllArticlesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-       return inflater.inflate(R.layout.fragment_allarticles, container, false);
+        fl = (GridLayout) inflater.inflate(R.layout.fragment_allarticles, container, false);
+       return fl;
 
     }
     @Override
@@ -50,6 +52,11 @@ public class AllArticlesFragment extends Fragment {
                 Iterator<Articulo> it = response.body().iterator();
                 while(it.hasNext()){
                     Articulo a = it.next();
+                    LinearLayout x = new LinearLayout(getContext());
+                    TextView nombre = new TextView(x.getContext());
+                    nombre.setText(a.getTitulo());
+                    x.addView(nombre);
+                    fl.addView(x);
                     //Mostrar grid de articulos
                 }
             }

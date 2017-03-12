@@ -21,6 +21,60 @@
     </item>
     <item
         is-multidex="true"
+        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_2c6514487b65163857ee4459cf0824c18b334a71\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2ea383513f0aceb379a4aff7a4cd78754a710edb">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_1dd9eab783d5e267cfe330ad344f0ef81e7864ea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_d649071d42b19ddb0895f195d18104c729d7888a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.1\27293c440d2085cde1d859528aff6e7d3b6ae40\retrofit-2.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.1_bc041eaccc32524e283f8ecf2a4b6d526e7b3358\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\asier\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_e371b59b905cc267f1822aa0b62452b9b83d0be0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_c5915250e4464e2a8c5b5f962c03dd1f6996fbea\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
         jumboMode="true"
         optimize="true"
@@ -36,15 +90,6 @@
         revision="25.0.2"
         sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.1_96da04c4efc8f697a331a6d9d5511f4e56363a40\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.1_2c6514487b65163857ee4459cf0824c18b334a71\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -66,15 +111,6 @@
     </item>
     <item
         is-multidex="true"
-        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9cf16818f9322baac43e9a5208ca1de4101cbd0e">
-        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_1dd9eab783d5e267cfe330ad344f0ef81e7864ea\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -88,7 +124,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="88590e9a9d9458ad170c972888ba3fc70947b468">
+        sha1="b6a296ce9c0e0a6a4738d38fc413b1fe289127f4">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_f516a43e32dd2e219899fb7603feb7a0d610ea08\classes.dex" />
     </item>
     <item
@@ -135,42 +171,6 @@
         revision="25.0.2"
         sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
         <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.1_80238724350700a171914ac5bedefebad552a532\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.1_d649071d42b19ddb0895f195d18104c729d7888a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.1\27293c440d2085cde1d859528aff6e7d3b6ae40\retrofit-2.0.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="027293c440d2085cde1d859528aff6e7d3b6ae40">
-        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.1_bc041eaccc32524e283f8ecf2a4b6d526e7b3358\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\asier\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.1_e371b59b905cc267f1822aa0b62452b9b83d0be0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\AndroidStudioProjects\VibBay03\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.1_c5915250e4464e2a8c5b5f962c03dd1f6996fbea\classes.dex" />
     </item>
     <item
         is-multidex="true"
