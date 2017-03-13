@@ -1,7 +1,10 @@
 package com.example.asier.vibbay03.Fragments;
 
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +32,8 @@ public class loginFragment extends Fragment {
     EditText password;
     Button buttonClick;
     GridLayout fL;
+    NavigationView navigation;
+    Fragment allArticles;
 
 
     public loginFragment() {
@@ -45,6 +50,7 @@ public class loginFragment extends Fragment {
                     testLogin();}
         };
         fL = (GridLayout) inflater.inflate(R.layout.fragment_login, container, false);
+        navigation = (NavigationView)container.getRootView().findViewById(R.id.nav_view);
         buttonClick = (Button)fL.findViewById(R.id.buttonAccept);
         buttonClick.setOnClickListener(mClickListener);
         return fL;
@@ -71,7 +77,16 @@ public class loginFragment extends Fragment {
                 if(response.body().size() > 0){
                     Usuario u = response.body().get(0);
                     Retro.loggedIn = u;
+                    navigation.getMenu().findItem(R.id.nav_login).setVisible(false);
+                    navigation.getMenu().findItem(R.id.nav_myArticles).setVisible(true);
+                    navigation.getMenu().findItem(R.id.nav_newArticle).setVisible(true);
                     loginMessage = Toast.makeText(getContext(), "LOGIN CORRECTO", Toast.LENGTH_SHORT);
+                    allArticles = new AllArticlesFragment();
+                    FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.include_main, allArticles);
+                    fragmentTransaction.commit();
+
                 }else{
                     loginMessage = Toast.makeText(getContext(), "USER OR PASSWORD INVALID", Toast.LENGTH_SHORT);
                 }
@@ -85,14 +100,5 @@ public class loginFragment extends Fragment {
                 toast.show();
             }
         });
-//        Log.i("Login",username.getText().toString());
-//        Log.i("Login",password.getText().toString());
-//        if(username.getText().toString().equals("mco@mco") && password.getText().toString().equals("12345")){
-//            Toast toast = Toast.makeText(getContext(), "CORRECT", Toast.LENGTH_SHORT);
-//            toast.show();
-//        }else{
-//            Toast toast = Toast.makeText(getContext(), "USER OR PASS INCORRECT", Toast.LENGTH_SHORT);
-//            toast.show();
-//        }
     }
 }

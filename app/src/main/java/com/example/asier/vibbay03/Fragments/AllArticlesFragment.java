@@ -78,8 +78,6 @@ public class AllArticlesFragment extends Fragment {
             @Override
             public void onFailure(Call<List<Articulo>> call, Throwable t) {
                 Log.i("FALLOS",t.getMessage());
-                Toast toast = Toast.makeText(getContext(), "Connection failure", Toast.LENGTH_SHORT);
-                toast.show();
             }
         });
     }
