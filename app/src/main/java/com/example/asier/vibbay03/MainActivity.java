@@ -1,19 +1,25 @@
 package com.example.asier.vibbay03;
 
+import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.asier.vibbay03.Fragments.AllArticlesFragment;
+import com.example.asier.vibbay03.Fragments.SearchedArticlesFragment;
 import com.example.asier.vibbay03.Fragments.loginFragment;
 import com.example.asier.vibbay03.Fragments.MyArticlesFragment;
 import com.example.asier.vibbay03.Fragments.NewArticleFragment;
@@ -70,10 +76,50 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.action_settings) {
             return true;
         }else if(id== R.id.action_search){
-            Toast toast = Toast.makeText(context, "Search", duration);
-            toast.show();
+            SearchView sv = new SearchView(getSupportActionBar().getThemedContext());
+            MenuItemCompat.setShowAsAction(item, MenuItemCompat.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW | MenuItemCompat.SHOW_AS_ACTION_IF_ROOM);
+            MenuItemCompat.setActionView(item, sv);
+            sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
 
+                    SearchedArticlesFragment frag = new SearchedArticlesFragment();
+                    frag.showSearchedArticles(query);
+                    Log.i("Cambios","ENTRA AL SUBIR");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.include_main, frag)
+                            .commit();
+                    Log.i("Cambios","sale del subir");
+                    return false;
+                }
 
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    SearchedArticlesFragment frag = new SearchedArticlesFragment();
+                    frag.showSearchedArticles(newText);
+                    Log.i("Cambios","ENTRA AL SUBIR");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.include_main, frag)
+                            .commit();
+                    Log.i("Cambios","sale del subir");
+                    return false;
+                }
+            });
+            sv.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener() {
+                @Override
+                public void onViewAttachedToWindow(View v) {
+
+                }
+
+                @Override
+                public void onViewDetachedFromWindow(View v) {
+                    AllArticlesFragment frag = new AllArticlesFragment();
+                    Log.i("Cambios","ENTRA AL cerrar");
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.include_main, frag)
+                            .commit();
+                }
+            });
         }
 
         return super.onOptionsItemSelected(item);
@@ -91,22 +137,13 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction = true;
                 break;
             case R.id.nav_myArticles:
-                if(Retro.loggedIn != null){
+
                     fragment = new MyArticlesFragment();
                     fragmentTransaction = true;
-                }else{
-                    fragment = new loginFragment();
-                    fragmentTransaction = true;
-                }
                 break;
             case R.id.nav_newArticle:
-                if(Retro.loggedIn != null){
                     fragment = new NewArticleFragment();
                     fragmentTransaction = true;
-                }else{
-                    fragment = new loginFragment();
-                    fragmentTransaction = true;
-                }
                 break;
             case R.id.nav_main:
                 fragment = new AllArticlesFragment();
@@ -118,10 +155,6 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction()
                     .replace(R.id.include_main, fragment)
                     .commit();
-
-
-//            menuItem.setChecked(true);
-//            getSupportActionBar().setTitle(menuItem.getTitle());
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

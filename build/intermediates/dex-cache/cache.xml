@@ -3,6 +3,42 @@
 
     <item
         is-multidex="false"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\gson-2.6.1_23a4c1ce256bf5c634a7998e2134b49c860330b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_7daebc00e7c7d19ebd8d85d9586070304a89c215.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\asier\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_e371b59b905cc267f1822aa0b62452b9b83d0be0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_0da28de083caeb17ee8d10a64a77735ae842eace.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-gson\2.0.1\2780d858273ce1bb90f6b12e1ef0d40f7741fca\converter-gson-2.0.1.jar"
         jumboMode="true"
         optimize="true"
@@ -21,12 +57,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\okio-1.6.0_e423abed1a0df196d59bb22f08cc14c357cf7380.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_eab291ac6208974c25a331f732bf354f1c8dbbb3.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
         <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_f984ec9a1b03b4a24d850af2288183943375754f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d51ac43d0818e6e0e9e3592ed1c62c2bddaf9d5c">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_6e783606bb6f00725961fbdd5b4891ffff8cd3b6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,78 +138,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_7f8ed371931622c5a1684fc1c1d4404c2f7d0fe0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.6.1\b9d63507329a7178e026fc334f87587ee5070ac5\gson-2.6.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b9d63507329a7178e026fc334f87587ee5070ac5">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\gson-2.6.1_23a4c1ce256bf5c634a7998e2134b49c860330b3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_7daebc00e7c7d19ebd8d85d9586070304a89c215.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.1\support-annotations-25.1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b59b6ee8d6ecc03e672d253800430343493a6ed8">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.1_e371b59b905cc267f1822aa0b62452b9b83d0be0.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_0da28de083caeb17ee8d10a64a77735ae842eace.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\okio-1.6.0_e423abed1a0df196d59bb22f08cc14c357cf7380.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="15b049fedbd8e3926bf99d9e45dfc9b2a1043bb9">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-transition-25.1.1_eab291ac6208974c25a331f732bf354f1c8dbbb3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="ae2885902e39e7f89ac7bed91c1295103db40e78">
-        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_6e783606bb6f00725961fbdd5b4891ffff8cd3b6.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -180,6 +171,15 @@
         revision="25.0.2"
         sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
         <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_ad1ec6f6d462f28ca4f35d1c6ebbb983d5c73281.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\exploded-aar\com.android.support\design\25.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cd7951e04cfb9a8bf008d544a478d9a8d8192d38">
+        <dex dex="C:\Users\asier\AndroidStudioProjects\VibBay03\app\build\intermediates\pre-dexed\debug\com.android.support-design-25.1.1_7f8ed371931622c5a1684fc1c1d4404c2f7d0fe0.jar" />
     </item>
 
 </items>

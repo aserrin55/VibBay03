@@ -34,9 +34,21 @@
         android:id="@+id/ArticlePrice" />
 
     <Button
+        android:text="Sacar foto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraButton" />
+    
+    <Button
         android:text="Agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Add" />
+    
+    <ImageView
+        android:id="@+id/imageTaken"
+        android:layout_width="100px"
+        android:layout_height="100px"
+        android:src="@drawable/ic_menu_camera"/>
 
 </LinearLayout>

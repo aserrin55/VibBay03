@@ -1,6 +1,11 @@
 package com.example.asier.vibbay03.Fragments;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -8,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -26,10 +32,14 @@ import retrofit2.Response;
 
 public class NewArticleFragment extends Fragment {
 
+    private int GALLERY_REQUEST = 1;
+    private int CAMERA_REQUEST = 1888;
+    private ImageView imageView;
     LinearLayout ll;
     EditText nombre;
     EditText precio;
     Button add;
+    Button camera;
 
     public NewArticleFragment() {
         // Required empty public constructor
@@ -46,9 +56,25 @@ public class NewArticleFragment extends Fragment {
                 addArticle();
             }
         });
-        return ll;
+        imageView = (ImageView)ll.findViewById(R.id.imageTaken);
+        camera = (Button)ll.findViewById(R.id.cameraButton);
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /// Con esto la cogemos de la galeria, camera_request tiene que ser 1
+                //Intent cameraIntent = new Intent();
+                //cameraIntent.setType("image/*");
+                //cameraIntent.setAction(Intent.ACTION_GET_CONTENT);
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
 
+                startActivityForResult(Intent.createChooser(cameraIntent,"Elige"), CAMERA_REQUEST);
+                Log.i("CAMARA","ENTRA A LO SIGUINTE");
+            }
+        });
+
+        return ll;
     }
+
     @Override
     public void onActivityCreated(Bundle state){
         super.onActivityCreated(state);
@@ -59,6 +85,7 @@ public class NewArticleFragment extends Fragment {
     private void addArticle(){
         nombre = (EditText) ll.findViewById(R.id.ArticleName);
         precio = (EditText) ll.findViewById(R.id.ArticlePrice);
+
 
         ArticuloService as = Retro.getArticuloService();
         Call<Articulo> call = as.crearArticulo(new Articulo(nombre.getText().toString(),Retro.loggedIn.getEmail(),1,"",Integer.parseInt(precio.getText().toString())));
@@ -87,6 +114,25 @@ public class NewArticleFragment extends Fragment {
                 toast.show();
             }
         });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.i("VUELTA","ESTA VOLVIENDO AL MISMO ACTIVITY");
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK && data != null && data.getData() != null) {
+
+            Uri uri = data.getData();
+            Log.i("VUELTA",uri.toString());
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), uri);
+                // Log.d(TAG, String.valueOf(bitmap));
+                imageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 }

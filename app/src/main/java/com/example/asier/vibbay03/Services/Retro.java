@@ -21,7 +21,7 @@ public class Retro {
             .setLenient()
             .create();
 
-    private static final String BASE_URL = "http://192.168.1.128:8084/Vibbay03Web/rest/";
+    private static final String BASE_URL = "http://10.111.11.65:8084/Vibbay03Web/rest/";
     private static final Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
