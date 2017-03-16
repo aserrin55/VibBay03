@@ -20,9 +20,8 @@ import android.widget.Toast;
 import com.example.asier.vibbay03.Beans.Articulo;
 import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
-import com.example.asier.vibbay03.Services.Retro;
-
-import org.json.JSONObject;
+import com.example.asier.vibbay03.Tools.RetroTools;
+import com.example.asier.vibbay03.Tools.ImageTools;
 
 import java.io.IOException;
 
@@ -39,7 +38,7 @@ public class NewArticleFragment extends Fragment {
     EditText nombre;
     EditText precio;
     Button add;
-    Button camera;
+    Bitmap bm;
 
     public NewArticleFragment() {
         // Required empty public constructor
@@ -57,8 +56,7 @@ public class NewArticleFragment extends Fragment {
             }
         });
         imageView = (ImageView)ll.findViewById(R.id.imageTaken);
-        camera = (Button)ll.findViewById(R.id.cameraButton);
-        camera.setOnClickListener(new View.OnClickListener() {
+        imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 /// Con esto la cogemos de la galeria, camera_request tiene que ser 1
@@ -85,10 +83,10 @@ public class NewArticleFragment extends Fragment {
     private void addArticle(){
         nombre = (EditText) ll.findViewById(R.id.ArticleName);
         precio = (EditText) ll.findViewById(R.id.ArticlePrice);
+        String foto64 = ImageTools.encodeToBase64(bm,Bitmap.CompressFormat.JPEG,20);
 
-
-        ArticuloService as = Retro.getArticuloService();
-        Call<Articulo> call = as.crearArticulo(new Articulo(nombre.getText().toString(),Retro.loggedIn.getEmail(),1,"",Integer.parseInt(precio.getText().toString())));
+        ArticuloService as = RetroTools.getArticuloService();
+        Call<Articulo> call = as.crearArticulo(new Articulo(nombre.getText().toString(), RetroTools.loggedIn.getEmail(),1,foto64,Integer.parseInt(precio.getText().toString())));
         call.enqueue(new Callback<Articulo>() {
             @Override
             public void onResponse(Call<Articulo> call, Response<Articulo> response) {
@@ -110,8 +108,6 @@ public class NewArticleFragment extends Fragment {
             @Override
             public void onFailure(Call<Articulo> call, Throwable t) {
                 Log.i("FALLOS DE CONEXION",t.getMessage());
-                Toast toast = Toast.makeText(getContext(), "Connection failure", Toast.LENGTH_SHORT);
-                toast.show();
             }
         });
     }
@@ -126,9 +122,9 @@ public class NewArticleFragment extends Fragment {
             Uri uri = data.getData();
             Log.i("VUELTA",uri.toString());
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), uri);
+                bm = ImageTools.getResizedBitmap(MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), uri),600);
                 // Log.d(TAG, String.valueOf(bitmap));
-                imageView.setImageBitmap(bitmap);
+                imageView.setImageBitmap(bm);
             } catch (IOException e) {
                 e.printStackTrace();
             }

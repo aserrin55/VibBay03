@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.example.asier.vibbay03.Beans.Articulo;
 import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
-import com.example.asier.vibbay03.Services.Retro;
+import com.example.asier.vibbay03.Tools.RetroTools;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -35,7 +35,7 @@ public class SearchedArticlesFragment extends Fragment {
 
     public void showSearchedArticles(final String query)
     {
-        ArticuloService as = Retro.getArticuloService();
+        ArticuloService as = RetroTools.getArticuloService();
         Call<List<Articulo>> call = as.getSearchedArticulos(query);
         call.enqueue(new Callback<List<Articulo>>() {
             @Override
@@ -44,16 +44,19 @@ public class SearchedArticlesFragment extends Fragment {
                     Log.i("ARTICULOS",String.valueOf(response.body().size()));
                     Iterator<Articulo> it = response.body().iterator();
                     while(it.hasNext()){
-                            Articulo a = it.next();
-                            LinearLayout x = new LinearLayout(getContext());
-                            TextView nombre = new TextView(x.getContext());
-                            TextView precio = new TextView(x.getContext());
-                            nombre.setText(a.getTitulo());
-                            precio.setText(String.valueOf(a.getPrecio()));
-                            x.addView(nombre);
-                            x.addView(precio);
-                            fl.addView(x);
-                            //Mostrar grid de articulos
+                        Articulo a = it.next();
+                        LinearLayout x = new LinearLayout(getContext());
+                        TextView nombre = new TextView(x.getContext());
+                        TextView precio = new TextView(x.getContext());
+                        //ImageView imagen = new ImageView(x.getContext());
+                        nombre.setText(a.getTitulo());
+                        precio.setText(String.valueOf(a.getPrecio()));
+                        //imagen.setImageBitmap(ImageTools.decodeBase64(a.getImagen()));
+                        x.addView(nombre);
+                        x.addView(precio);
+                        //x.addView(imagen);
+                        fl.addView(x);
+                        //Mostrar grid de articulos
                     }
 
                 }else{

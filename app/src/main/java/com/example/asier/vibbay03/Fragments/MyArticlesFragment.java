@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.asier.vibbay03.Beans.Articulo;
 import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
-import com.example.asier.vibbay03.Services.Retro;
+import com.example.asier.vibbay03.Tools.RetroTools;
 
 import java.util.Iterator;
 import java.util.List;
@@ -45,8 +44,8 @@ public class MyArticlesFragment extends Fragment {
 
         Log.i("Fragment","Mis articulos mostrado");
 
-        ArticuloService as = Retro.getArticuloService();
-        Call<List<Articulo>> call = as.getArticulos(Retro.loggedIn.getEmail());
+        ArticuloService as = RetroTools.getArticuloService();
+        Call<List<Articulo>> call = as.getArticulos(RetroTools.loggedIn.getEmail());
         call.enqueue(new Callback<List<Articulo>>() {
             @Override
             public void onResponse(Call<List<Articulo>> call, Response<List<Articulo>> response) {
@@ -55,8 +54,14 @@ public class MyArticlesFragment extends Fragment {
                     Articulo a = it.next();
                     LinearLayout x = new LinearLayout(getContext());
                     TextView nombre = new TextView(x.getContext());
+                    TextView precio = new TextView(x.getContext());
+                    //ImageView imagen = new ImageView(x.getContext());
                     nombre.setText(a.getTitulo());
+                    precio.setText(String.valueOf(a.getPrecio()));
+                    //imagen.setImageBitmap(ImageTools.decodeBase64(a.getImagen()));
                     x.addView(nombre);
+                    x.addView(precio);
+                    //x.addView(imagen);
                     fl.addView(x);
                     //Mostrar grid de articulos
                 }
@@ -65,8 +70,6 @@ public class MyArticlesFragment extends Fragment {
             @Override
             public void onFailure(Call<List<Articulo>> call, Throwable t) {
                 Log.i("FALLOS",t.getMessage());
-                Toast toast = Toast.makeText(getContext(), "Connection failure", Toast.LENGTH_SHORT);
-                toast.show();
             }
         });
 

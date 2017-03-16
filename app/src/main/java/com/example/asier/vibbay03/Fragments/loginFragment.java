@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import com.example.asier.vibbay03.Beans.Usuario;
 import com.example.asier.vibbay03.R;
-import com.example.asier.vibbay03.Services.Retro;
+import com.example.asier.vibbay03.Tools.RetroTools;
 import com.example.asier.vibbay03.Services.LoginService;
 
 import java.util.List;
@@ -68,7 +68,7 @@ public class loginFragment extends Fragment {
         username = (EditText)fL.findViewById(R.id.login_username);
         password = (EditText)fL.findViewById(R.id.login_password);
 
-        LoginService ls = Retro.getLoginService();
+        LoginService ls = RetroTools.getLoginService();
         Call<List<Usuario>> call = ls.auth(username.getText().toString(), password.getText().toString());
         call.enqueue(new Callback<List<Usuario>>() {
             @Override
@@ -76,7 +76,7 @@ public class loginFragment extends Fragment {
                 Toast loginMessage;
                 if(response.body().size() > 0){
                     Usuario u = response.body().get(0);
-                    Retro.loggedIn = u;
+                    RetroTools.loggedIn = u;
                     navigation.getMenu().findItem(R.id.nav_login).setVisible(false);
                     navigation.getMenu().findItem(R.id.nav_myArticles).setVisible(true);
                     navigation.getMenu().findItem(R.id.nav_newArticle).setVisible(true);
@@ -96,8 +96,6 @@ public class loginFragment extends Fragment {
             @Override
             public void onFailure(Call<List<Usuario>> call, Throwable t) {
                 Log.i("FALLOS",t.getMessage());
-                Toast toast = Toast.makeText(getContext(), "Connection failure", Toast.LENGTH_SHORT);
-                toast.show();
             }
         });
     }

@@ -9,12 +9,11 @@ import android.view.ViewGroup;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.asier.vibbay03.Beans.Articulo;
 import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
-import com.example.asier.vibbay03.Services.Retro;
+import com.example.asier.vibbay03.Tools.RetroTools;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -45,7 +44,7 @@ public class AllArticlesFragment extends Fragment {
         super.onActivityCreated(state);
         Log.i("Fragment","Todos los artículos fragment terminado");
 
-        ArticuloService as = Retro.getArticuloService();
+        ArticuloService as = RetroTools.getArticuloService();
         Call<List<Articulo>> call = as.getArticulos();
         call.enqueue(new Callback<List<Articulo>>() {
             @Override
@@ -58,10 +57,13 @@ public class AllArticlesFragment extends Fragment {
                         LinearLayout x = new LinearLayout(getContext());
                         TextView nombre = new TextView(x.getContext());
                         TextView precio = new TextView(x.getContext());
+                        //ImageView imagen = new ImageView(x.getContext());
                         nombre.setText(a.getTitulo());
                         precio.setText(String.valueOf(a.getPrecio()));
+                        //imagen.setImageBitmap(ImageTools.decodeBase64(a.getImagen()));
                         x.addView(nombre);
                         x.addView(precio);
+                        //x.addView(imagen);
                         fl.addView(x);
                         //Mostrar grid de articulos
                 }

@@ -1,6 +1,5 @@
 package com.example.asier.vibbay03;
 
-import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,7 +22,6 @@ import com.example.asier.vibbay03.Fragments.SearchedArticlesFragment;
 import com.example.asier.vibbay03.Fragments.loginFragment;
 import com.example.asier.vibbay03.Fragments.MyArticlesFragment;
 import com.example.asier.vibbay03.Fragments.NewArticleFragment;
-import com.example.asier.vibbay03.Services.Retro;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity
 
         //Llamar a AllArticlesFragment
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.include_main, new AllArticlesFragment())
+                .replace(R.id.include_main, new NewArticleFragment())
                 .commit();
     }
 
@@ -137,13 +135,12 @@ public class MainActivity extends AppCompatActivity
                 fragmentTransaction = true;
                 break;
             case R.id.nav_myArticles:
-
-                    fragment = new MyArticlesFragment();
-                    fragmentTransaction = true;
+                fragment = new MyArticlesFragment();
+                fragmentTransaction = true;
                 break;
             case R.id.nav_newArticle:
-                    fragment = new NewArticleFragment();
-                    fragmentTransaction = true;
+                fragment = new NewArticleFragment();
+                fragmentTransaction = true;
                 break;
             case R.id.nav_main:
                 fragment = new AllArticlesFragment();

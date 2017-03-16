@@ -33,22 +33,20 @@
         android:ems="10"
         android:id="@+id/ArticlePrice" />
 
-    <Button
-        android:text="Sacar foto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cameraButton" />
-    
+    <ImageView
+        android:id="@+id/imageTaken"
+        android:src="@drawable/ic_menu_camera"
+        android:adjustViewBounds="false"
+        android:cropToPadding="false"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="600px"
+        android:layout_height="600px" />
+
     <Button
         android:text="Agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Add" />
-    
-    <ImageView
-        android:id="@+id/imageTaken"
-        android:layout_width="100px"
-        android:layout_height="100px"
-        android:src="@drawable/ic_menu_camera"/>
+        android:id="@+id/Add"
+        android:elevation="0dp" />
 
 </LinearLayout>
