@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity
 
         //Llamar a AllArticlesFragment
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.include_main, new NewArticleFragment())
+                .replace(R.id.include_main, new AllArticlesFragment())
                 .commit();
     }
 

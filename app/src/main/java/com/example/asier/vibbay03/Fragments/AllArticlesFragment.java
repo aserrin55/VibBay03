@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.asier.vibbay03.Beans.Articulo;
 import com.example.asier.vibbay03.R;
 import com.example.asier.vibbay03.Services.ArticuloService;
+import com.example.asier.vibbay03.Tools.ImageTools;
 import com.example.asier.vibbay03.Tools.RetroTools;
 
 import java.io.IOException;
@@ -57,13 +59,14 @@ public class AllArticlesFragment extends Fragment {
                         LinearLayout x = new LinearLayout(getContext());
                         TextView nombre = new TextView(x.getContext());
                         TextView precio = new TextView(x.getContext());
-                        //ImageView imagen = new ImageView(x.getContext());
+                        ImageView imagen = new ImageView(x.getContext());
                         nombre.setText(a.getTitulo());
+                        Log.i("imagen", a.getImagen());
                         precio.setText(String.valueOf(a.getPrecio()));
-                        //imagen.setImageBitmap(ImageTools.decodeBase64(a.getImagen()));
+                        imagen.setImageBitmap(ImageTools.decodeBase64(a.getImagen()));
                         x.addView(nombre);
                         x.addView(precio);
-                        //x.addView(imagen);
+                        x.addView(imagen);
                         fl.addView(x);
                         //Mostrar grid de articulos
                 }

@@ -39,14 +39,14 @@
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:layout_gravity="center_horizontal"
-        android:layout_width="600px"
-        android:layout_height="600px" />
+        android:layout_width="300px"
+        android:layout_height="300px" />
 
     <Button
         android:text="Agregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/Add"
-        android:elevation="0dp" />
+        />
 
 </LinearLayout>
